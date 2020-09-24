@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS users cascade;
+DROP TABLE IF EXISTS userJDBCS cascade;
 DROP TABLE IF EXISTS roles cascade;
 DROP TABLE IF EXISTS orders cascade;
 DROP TABLE IF EXISTS brands cascade;
@@ -34,7 +34,7 @@ CREATE TABLE roles (
 CREATE TABLE users_role (
     user_id    bigint NOT NULL,
     role_id    bigint NOT NULL,
-    FOREIGN KEY (user_id) references users(id),
+    FOREIGN KEY (user_id) references userJDBCS(id),
     FOREIGN KEY (role_id) references roles(id)
 );
 
@@ -46,7 +46,7 @@ CREATE TABLE orders (
     order_status            VARCHAR(30),
     order_shipping_date     DATE ,
     order_tracking_number   VARCHAR(50),
-    FOREIGN KEY (user_id) references users(id)
+    FOREIGN KEY (user_id) references userJDBCS(id)
 );
 
 CREATE TABLE categories (
