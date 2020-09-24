@@ -1,21 +1,20 @@
-package org.example.jdbc_model_dao;
+package org.yanwen.jdbc;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDao {
+public class UserJDBCDao {
     static final String DBURL = "jdbc:postgresql://localhost:5555/homeGoods";
     static final String USER = "admin";
     static final String PASS = "password";
     private Logger logger = LoggerFactory.getLogger(getClass()); //crate a logger instance
     //CRUD
 
-    public List<User> getUsers(){
-        List<User> users = new ArrayList();
+    public List<UserJDBC> getUsers(){
+        List<UserJDBC> userJDBCS = new ArrayList();
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -47,17 +46,17 @@ public class UserDao {
                 String address = rs.getString("address");
 
                 //Fill the object
-                User user = new User();
-                user.setId(id);
-                user.setUser_name(user_name);
-                user.setPassword(password);
-                user.setFirst_name(first_name);
-                user.setLast_name(last_name);
-                user.setPhone(phone);
-                user.setEmail(email);
-                user.setGender(gender);
-                user.setBirthday(birthday);
-                user.setAddress(address);
+                UserJDBC userJDBC = new UserJDBC();
+                userJDBC.setId(id);
+                userJDBC.setUser_name(user_name);
+                userJDBC.setPassword(password);
+                userJDBC.setFirst_name(first_name);
+                userJDBC.setLast_name(last_name);
+                userJDBC.setPhone(phone);
+                userJDBC.setEmail(email);
+                userJDBC.setGender(gender);
+                userJDBC.setBirthday(birthday);
+                userJDBC.setAddress(address);
             }
         }
         catch(SQLException e){
@@ -74,11 +73,11 @@ public class UserDao {
                 se.printStackTrace();
             }
         }
-        return users;
+        return userJDBCS;
     }
 
     public static void main(String[] args){
-        UserDao userJDBCDao = new UserDao();
+        UserJDBCDao userJDBCDao = new UserJDBCDao();
         System.out.println(userJDBCDao.getUsers());
     }
 }

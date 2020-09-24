@@ -1,9 +1,9 @@
-package org.example.jdbc_model_dao;
+package org.yanwen.jdbc;
 
 
 import java.sql.Date;
 
-public class User {
+public class UserJDBC {
     private long id;
     private String user_name;
     private String password;
@@ -15,9 +15,9 @@ public class User {
     private Date birthday;
     private String address;
 
-    public User(){}
+    public UserJDBC(){}
 
-    public User(String user_name, String password, String first_name, String last_name, String phone, String email, String gender, Date birthday, String address){
+    public UserJDBC(String user_name, String password, String first_name, String last_name, String phone, String email, String gender, Date birthday, String address){
         this.user_name = user_name;
         this.password = password;
         this.first_name = first_name;
