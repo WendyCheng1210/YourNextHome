@@ -3,14 +3,18 @@ package org.yanwen.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "orders")
 public class Order implements Serializable {
-    public Order(){}
+    public Order(){
+        products = new HashSet<>();
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +22,7 @@ public class Order implements Serializable {
     private long id;
 
     @Column(name = "order_date")
-    private Date order_date;
+    private Timestamp order_date;
 
     @Column(name = "order_amount")
     private BigDecimal order_amount;
@@ -27,7 +31,7 @@ public class Order implements Serializable {
     private String order_status;
 
     @Column(name = "order_shipping_date")
-    private Date order_shipping_date;
+    private Timestamp order_shipping_date;
 
     @Column(name = "order_tracking_number")
     private String order_tracking_number;
@@ -61,11 +65,11 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-    public Date getOrder_date() {
+    public Timestamp getOrder_date() {
         return order_date;
     }
 
-    public void setOrder_date(Date order_date) {
+    public void setOrder_date(Timestamp order_date) {
         this.order_date = order_date;
     }
 
@@ -89,7 +93,7 @@ public class Order implements Serializable {
         return order_shipping_date;
     }
 
-    public void setOrder_shipping_date(Date order_shipping_date) {
+    public void setOrder_shipping_date(Timestamp order_shipping_date) {
         this.order_shipping_date = order_shipping_date;
     }
 
