@@ -11,6 +11,8 @@ import java.util.Set;
 @Table(name = "brands")
 public class Brand {
 
+    public Brand(){}
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
