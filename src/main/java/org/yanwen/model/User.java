@@ -6,12 +6,19 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
+    public User(){}
+
+    public User(long id){
+        this.id = id;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -38,7 +45,7 @@ public class User implements Serializable {
     private String gender;
 
     @Column(name = "birthday")
-    private Date birthday;
+    private Timestamp birthday;
 
     @Column(name = "address")
     private String address;
@@ -128,11 +135,11 @@ public class User implements Serializable {
         this.gender = gender;
     }
 
-    public Date getBirthday() {
+    public Timestamp getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(Timestamp birthday) {
         this.birthday = birthday;
     }
 

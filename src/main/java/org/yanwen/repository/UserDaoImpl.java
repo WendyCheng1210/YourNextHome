@@ -1,6 +1,7 @@
 package org.yanwen.repository;
 
 
+import org.hibernate.HibernateException;
 import org.yanwen.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -39,7 +40,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User getByID(Long Id) {
-        String hql = "From User as u where u.id = :Id";
+        String hql = "From User as u left join fetch u.orders where u.id = :Id";
         try(Session session = sessionFactory.openSession()) {
             Query<User> query = session.createQuery(hql);
             query.setParameter("Id", Id);
@@ -54,6 +55,23 @@ public class UserDaoImpl implements UserDao {
             Query<User> query = session.createQuery(hql);
             query.setParameter("email", email.toLowerCase());
             return query.uniqueResult();
+        }
+    }
+
+    @Override
+    public User getEagerBy(Long Id) {
+        String hql = "From User as u left join fetch u.orders where u.id = :Id";
+        Session session = sessionFactory.openSession();
+        try {
+            Query<User> query = session.createQuery(hql);
+            query.setParameter("Id",Id);
+            User result = query.uniqueResult();
+            session.close();
+            return result;
+        }catch (HibernateException e){
+            logger.error("failure to retrieve data record",e);
+            session.close();
+            return null;
         }
     }
 

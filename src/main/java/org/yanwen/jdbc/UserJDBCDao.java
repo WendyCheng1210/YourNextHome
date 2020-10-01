@@ -42,7 +42,7 @@ public class UserJDBCDao {
                 String phone = rs.getString("phone");
                 String email = rs.getString("email");
                 String gender = rs.getString("gender");
-                Date birthday = rs.getDate("birthday");
+                Timestamp birthday = rs.getTimestamp("birthday");
                 String address = rs.getString("address");
 
                 //Fill the object

@@ -2,6 +2,7 @@ package org.yanwen.jdbc;
 
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class UserJDBC {
     private long id;
@@ -12,12 +13,12 @@ public class UserJDBC {
     private String phone;
     private String email;
     private String gender;
-    private Date birthday;
+    private Timestamp birthday;
     private String address;
 
     public UserJDBC(){}
 
-    public UserJDBC(String user_name, String password, String first_name, String last_name, String phone, String email, String gender, Date birthday, String address){
+    public UserJDBC(String user_name, String password, String first_name, String last_name, String phone, String email, String gender, Timestamp birthday, String address){
         this.user_name = user_name;
         this.password = password;
         this.first_name = first_name;
@@ -93,11 +94,11 @@ public class UserJDBC {
         this.gender = gender;
     }
 
-    public Date getBirthday() {
+    public Timestamp getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(Timestamp birthday) {
         this.birthday = birthday;
     }
 

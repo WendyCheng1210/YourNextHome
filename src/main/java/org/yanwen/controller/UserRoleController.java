@@ -26,7 +26,7 @@ public class UserRoleController {
     }
 
     @GetMapping(value="/roles", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Role> findAllRoles(){
+    public List<Role> getAllRoles(){
         return roleService.getAllRoles();
     }
 }
