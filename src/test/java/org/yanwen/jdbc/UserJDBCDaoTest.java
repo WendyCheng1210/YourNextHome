@@ -1,22 +1,22 @@
-package org.example.jdbc;
+package org.yanwen.jdbc;
 
-import org.example.jdbc_model_dao.User;
-import org.example.jdbc_model_dao.UserDao;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.yanwen.jdbc.UserJDBC;
+import org.yanwen.jdbc.UserJDBCDao;
 
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class UserDaoTest {
+public class UserJDBCDaoTest {
 
-    private UserDao userJDBCDao;
+    private UserJDBCDao userJDBCDao;
 
     @Before
     public void setUp(){
-        userJDBCDao = new UserDao();
+        userJDBCDao = new UserJDBCDao();
     }
 
     @After
@@ -26,8 +26,8 @@ public class UserDaoTest {
 
     @Test
     public void getUserTest(){
-        List<User> userList = userJDBCDao.getUsers();
-        assertEquals(0, userList.size());
+        List<UserJDBC> userJDBCList = userJDBCDao.getUsers();
+        assertEquals(0, userJDBCList.size());
     }
 
 }

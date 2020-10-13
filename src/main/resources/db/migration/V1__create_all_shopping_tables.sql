@@ -17,7 +17,7 @@ CREATE TABLE users (
     phone           VARCHAR(20),
     email           VARCHAR(50),
     gender          VARCHAR(10),
-    birthday        DATE,
+    birthday        TIMESTAMP ,
     address         VARCHAR(100)
 );
 
@@ -41,10 +41,10 @@ CREATE TABLE users_role (
 CREATE TABLE orders (
     id                      BIGSERIAL NOT NULL PRIMARY KEY,
     user_id                 BIGSERIAL NOT NULL,
-    order_date              DATE ,
+    order_date              TIMESTAMP ,
     order_amount            DECIMAL(20,2),
     order_status            VARCHAR(30),
-    order_shipping_date     DATE ,
+    order_shipping_date     TIMESTAMP ,
     order_tracking_number   VARCHAR(50),
     FOREIGN KEY (user_id) references users(id)
 );
