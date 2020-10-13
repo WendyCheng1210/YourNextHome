@@ -44,7 +44,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public List<Order> getOrders() {
-        String hql = "From Order";
+        String hql = "FROM Order";
         Session s = sessionFactory.openSession();
         List<Order> result = new ArrayList<>();
 
@@ -61,7 +61,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public Order getBy(long id) {
-        String hql = "From Order as o where o.id = :Id";
+        String hql = "FROM Order as o WHERE o.id = :Id";
         Session session = sessionFactory.openSession();
         try{
             Query<Order> query = session.createQuery(hql);
@@ -77,7 +77,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public Order getOrderEagerBy(long id) {
-        String hql = "FROM Order as o LEFT JOIN FETCH o.products where o.id=:Id";
+        String hql = "FROM Order as o LEFT JOIN FETCH o.products WHERE o.id=:Id";
         Session session = sessionFactory.openSession();
         try {
             Query<Order> query = session.createQuery(hql);
@@ -109,7 +109,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public boolean delete(Order order) {
-        String hql = "DELETE Order as o where o.id = :Id";
+        String hql = "DELETE Order as o WHERE o.id = :Id";
         int deletedCount = 0;
         Transaction transaction = null;
         Session session = sessionFactory.openSession();
