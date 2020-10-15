@@ -1,6 +1,5 @@
 package org.yanwen.repository;
 
-
 import org.hibernate.HibernateException;
 import org.yanwen.model.User;
 import org.hibernate.Session;
@@ -77,7 +76,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User getUserByCredentials(String email, String password) {
-        String hql = "From User as u where (lower(u.email) = :email or lower(u.name) = :email) and u.password = :password";
+        String hql = "From User as u where (lower(u.email) = :email or lower(u.user_name) = :email) and u.password = :password";
         logger.debug(String.format("User email: %s, password: %s", email, password));
 
         try(Session session = sessionFactory.openSession()){
