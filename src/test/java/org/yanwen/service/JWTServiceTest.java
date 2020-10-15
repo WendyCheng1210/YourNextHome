@@ -39,7 +39,7 @@ public class JWTServiceTest {
     public void decryptJwtTokenTest(){
         User user = userService.getByID(1L);
 //        user.setId(1L);
-        user.setUser_name("wendycheng");
+//        user.setUser_name("wendycheng");
         String token = jwtService.generateToken(user);
         Claims c = jwtService.decryptJwtToken(token);
 
