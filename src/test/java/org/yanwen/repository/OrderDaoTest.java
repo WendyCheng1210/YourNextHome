@@ -100,11 +100,11 @@ public class OrderDaoTest {
     @Test
     public void getOrdersTest(){
         List<Order> orders = orderDao.getOrders();
-        int expectedNumOfOrder = 4;
+        int expectedNumOfOrder = 6;
         Assert.assertEquals(expectedNumOfOrder, orders.size());
 
         List<Product> products = productDao.getProducts();
-        int expectedNumOfProduct = 3;
+        int expectedNumOfProduct = 6;
         Assert.assertEquals(expectedNumOfProduct, products.size());
     }
 
