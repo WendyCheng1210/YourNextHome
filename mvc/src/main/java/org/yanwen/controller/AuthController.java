@@ -29,7 +29,7 @@ public class AuthController {
 //    http://localhost:8080/auth
 //    {
 //        "email":"wendy@gmail.com",
-//            "password":"123456789"
+//            "password":" "
 //    }
     @RequestMapping(value = "",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
     public String userLogin(@RequestBody User user){
