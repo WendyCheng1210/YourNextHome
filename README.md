@@ -8,7 +8,7 @@ Postman, Maven, PostgresSql, Docker, Amazon SQS, and Amazon S3.
 1. Project Business Rules
 2. Relationships
        *Project Approach:
-       Created Game, Team, Player, Sponsor
+       Created Users, Roles, Oders, Products, Categories, Brands 
        
 ## Configure local environment
 ### 1.Setup local database with docker
