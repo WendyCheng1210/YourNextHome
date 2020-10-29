@@ -5,6 +5,7 @@ import io.jsonwebtoken.Claims;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import org.yanwen.model.User;
 import org.yanwen.service.JWTService;
 import org.yanwen.service.UserService;
@@ -38,6 +39,10 @@ public class SecurityFilter implements Filter{
         //3.Decrypt token to get claim
         //4.Verify username info in our database from claim
         //5.doFilter dispatch to controller
+
+        if (userService == null) {
+            SpringBeanAutowiringSupport.processInjectionBasedOnServletContext(this, request.getServletContext());
+        }
 
         int statusCode = authorization((HttpServletRequest)request);
         if (statusCode == HttpServletResponse.SC_ACCEPTED) chain.doFilter(request, response);
