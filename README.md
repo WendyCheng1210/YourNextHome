@@ -24,5 +24,5 @@ mvn clean compile flyway:mygrate
 ### Testing 
 Tests are done using JUnit and Mockito. 
 ```
-mvn compile test -Dspring.profiles.active=${unit} -Daws.region=${region} -Ddb.url=${localhost:5432/basketballDB_Demo_unit} -Ddb.username=${username} -Ddb.password=${password} 
+mvn compile test -Dspring.profiles.active=${unit} -Daws.region=${us-east-1} -Ddatabase.url=jdbc:postgresql://localhost:5555/homeGoods -Ddatabase.user=${admin} -Ddatabase.password=${password} 
 ```
