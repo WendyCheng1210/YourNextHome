@@ -21,7 +21,7 @@ Refer to flyway setup [documentation](https://flywaydb.org/documentation/migrati
 ```
 mvn clean compile flyway:mygrate
 ```
-### Testing 
+### 2.Testing 
 Tests are done using JUnit and Mockito. 
 ```
 mvn compile test -Dspring.profiles.active=${unit} -Daws.region=${us-east-1} -Ddatabase.url=jdbc:postgresql://localhost:5555/homeGoods -Ddatabase.user=${admin} -Ddatabase.password=${password} 
