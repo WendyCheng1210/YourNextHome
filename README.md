@@ -17,7 +17,7 @@ Reference to postgres docker [image](http://hub.docker.com/_/postgres) for envir
 docker run --name homeGoodsDB -e POSTGRES_DB=homeGoods -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=password -p 5555:5432 -d postgres
 ```
 ### migrate database schema
-Refer to flyway setup [documentation](https://flywaydb.org/documentation/migrations), find all [migration schema](src/main/resources/db/migrate)
+Refer to flyway setup [documentation](https://flywaydb.org/documentation/migrations), find all migration schema
 ```
 mvn clean compile flyway:mygrate
 ```
