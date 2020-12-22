@@ -1,10 +1,10 @@
 package org.yanwen.controller;
 
 
-import org.yanwen.model.Role;
-import org.yanwen.model.User;
-import org.yanwen.service.RoleService;
-import org.yanwen.service.UserService;
+import org.yanwen.core.domain.Role;
+import org.yanwen.core.domain.User;
+import org.yanwen.core.service.RoleService;
+import org.yanwen.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

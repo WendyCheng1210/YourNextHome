@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.yanwen.ApplicationBootstrap;
-import org.yanwen.model.User;
+import org.yanwen.core.domain.User;
+import org.yanwen.core.service.JWTService;
+import org.yanwen.core.service.UserService;
 
 import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;

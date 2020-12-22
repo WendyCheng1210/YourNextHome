@@ -13,6 +13,32 @@
   <modules>
     <module>mvc</module>
     <module>consumer</module>
+    <module>core</module>
   </modules>
 
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-maven-plugin</artifactId>
+        <version>6.0.4</version>
+        <configuration>
+          <driver>org.postgresql.Driver</driver>
+          <url>jdbc:postgresql://localhost:5555/homeGoods</url>
+          <user>admin</user>
+          <password>password</password>
+          <schemas>
+            <schema>public</schema>
+          </schemas>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
 </project>

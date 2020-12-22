@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.yanwen.ApplicationBootstrap;
+import org.yanwen.core.service.MessageService;
+
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 

@@ -1,5 +1,4 @@
 package org.yanwen.repository;
-import org.hibernate.HibernateException;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.yanwen.ApplicationBootstrap;
-import org.yanwen.model.*;
+import org.yanwen.core.domain.*;
+import org.yanwen.core.repository.CategoryDao;
+import org.yanwen.core.repository.OrderDao;
+import org.yanwen.core.repository.ProductDao;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
