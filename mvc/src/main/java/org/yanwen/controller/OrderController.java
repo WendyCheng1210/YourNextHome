@@ -1,12 +1,11 @@
 package org.yanwen.controller;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.*;
 import org.yanwen.core.domain.Order;
 import org.yanwen.core.service.OrderService;
-
 import java.util.List;
 
 @RestController
@@ -40,7 +39,11 @@ public class OrderController {
 
     //http://localhost:8080/orders
     @RequestMapping(value = "",method = RequestMethod.POST)
-    public void create(@RequestBody Order newObject){
+    public void create(@RequestBody Order newObject, HttpRequest request){
+        //TODO request.getHeaders().get("user_id");
+
+        //TODO getUserbyId
+
         logger.debug(newObject.toString());
     }
 

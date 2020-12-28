@@ -65,6 +65,8 @@ public class SecurityFilter implements Filter{
 
             if(claims.getId()!=null){
                 User u = userService.getByID(Long.valueOf(claims.getId()));
+                //Todo add userid into req.addheader
+               // req.getSession().setAttribute("user", u);
                 if(u==null) return statusCode;
 //                statusCode = HttpServletResponse.SC_ACCEPTED;
 //                u.getRoles();
